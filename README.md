@@ -37,3 +37,7 @@ http://<zeptrionAir ip address>/smf.html
 
 You will see as soon as you press a button on the zeptrionAir cover you will get
 a websoket message like this ```{"eid2":{"bta":"...P..P.."}}``` or this  ```{"eid2":{"bta":"..P......"}} ``` or something similar. The message itself is packed into the event-id-2 ```eid2``` as button-array ```bta```. Each array position represent the button state pressed ```P``` or released ```.```
+
+
+## potential installation
+![alt text](readme-res/0.png)
