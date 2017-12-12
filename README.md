@@ -1,10 +1,10 @@
 # zeptrion-websocket
 
-You can place any web-sevices on the zeptrionAir cover as described in the project https://github.com/woodworm/hue-on-zeptrion.
-However, if you want to trigger a service on a button press-event and a button release-event, this solution with the web-sevices on the zeptrionAir cover is maybe
-not enough flexible for you.
+You can send any web-sevices from a zeptrionAir cover as described in the project https://github.com/woodworm/hue-on-zeptrion.
+However, with this solution you can only trigger web-services with a button press-event.
+If you need also a trigger on button release-event, is the solution with the web-sockets more flexible for you.
 
-for example:
+The use cases could look like this:
 ```
 "on button press"   : "dim up"
 "on button release" : "stop dimming"
