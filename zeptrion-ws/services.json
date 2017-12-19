@@ -1,53 +1,59 @@
 {
-    "zapp-424242": [
+    "zapp-17800001": [
         {},
         {},
         {
             "pressed" : {
                 "req": "POST",
-                "loc": "192.168.7.129",
+                "loc": "192.168.7.236",
                 "port": 80,
                 "pth": "/zrap/chctrl",
                 "bdy": "cmd1=dim_up"
             },
             "released": {
                 "req": "POST",
-                "loc": "192.168.7.129",
+                "loc": "192.168.7.236",
                 "prt": 80,
                 "pth": "/zrap/chctrl",
                 "bdy": "cmd1=stop"
             }
         },
         {},
-        {
-            "pressed" : {
-                "loc": "192.168.7.128",
-                "prt": 80,
-                "pth": "/zrap/chctrl",
-                "bdy": "cmd1=toggle"
-            }
-        },
+        {},
         {},
         {},
         {},
         {}
     ],
-    "zapp-424241": [
+    "zapp-17800002": [
+      {},
+      {},
       {},
       {},
       {},
       {},
       {
-          "pressed": {
-            "loc": "192.168.7.128",
-            "prt": 80,
-            "pth": "/zrap/chctrl",
-            "bdy": "cmd1=toggle"
-        }
+          "tick" : {
+              "req": "POST",
+              "loc": "192.168.7.126",
+              "prt": 1400,
+              "hdr":{"Content-Type": "text/xml", "SOAPACTION": "urn:schemas-upnp-org:service:RenderingControl:1#SetVolume"},
+              "pth": "/MediaRenderer/RenderingControl/Control",
+              "bdy": "<?xml version=\"1.0\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetVolume xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>%d</DesiredVolume></u:SetVolume></s:Body></s:Envelope>",
+              "sonosVolumeUp":true
+          }
       },
-      {},
-      {},
-      {},
+      {
+          "tick" : {
+              "req": "POST",
+              "loc": "192.168.7.126",
+              "prt": 1400,
+              "hdr":{"Content-Type": "text/xml", "SOAPACTION": "urn:schemas-upnp-org:service:RenderingControl:1#SetVolume"},
+              "pth": "/MediaRenderer/RenderingControl/Control",
+              "bdy": "<?xml version=\"1.0\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetVolume xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>%d</DesiredVolume></u:SetVolume></s:Body></s:Envelope>",
+              "sonosVolumeDown":true
+          }
+      },
       {}
     ]
 }

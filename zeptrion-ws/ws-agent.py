@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 import json
+import threading
 
 
 import discovery
@@ -28,12 +29,20 @@ class WSAgent():
                     service_type = None
                     if '.P' == diff:
                         service_type = 'pressed'
+                        self.zeptrion_devices[ip].timer = threading.Timer(0.25, self.tick_event, args=(ip, num, name,))
+                        self.zeptrion_devices[ip].timer.start()
                     if 'P.' == diff:
                         service_type = 'released'
+                        self.zeptrion_devices[ip].timer.cancel()
                     if service_type:
                         service.trigger(name, num, service_type)
 
                 self.zeptrion_devices[ip].bta = message_data['eid2'].get('bta')
+
+    def tick_event(self, ip, num, name):
+        service.trigger(name, num, "tick")
+        self.zeptrion_devices[ip].timer = threading.Timer(0.25, self.tick_event, args=(ip, num, name,))
+        self.zeptrion_devices[ip].timer.start()
 
     def on_close_ws(self, ip):
         try:
@@ -48,6 +57,7 @@ class WSAgent():
             conn.name = name
             self.zeptrion_devices[ip] = conn
             self.zeptrion_devices[ip].bta = '.........'
+            self.zeptrion_devices[ip].timer = None
             print('new zeptrion device [%s][%s]' %
                   (ip, self.zeptrion_devices[ip].name))
 

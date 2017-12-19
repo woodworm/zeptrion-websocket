@@ -3,6 +3,7 @@
 import json
 import requests
 
+volume = 10
 
 def trigger(device_name, bt_num, service_typ):
     try:
@@ -28,9 +29,16 @@ def trigger(device_name, bt_num, service_typ):
                             prt = str(my_servive.get('prt', 80))
                             pth = my_servive.get('pth', '/')
                             bdy = my_servive.get('bdy')
-                            print(loc, prt, pth, bdy)
+                            hdr = my_servive.get('hdr')
+                            global volume
+                            if my_servive.get('sonosVolumeUp'):
+                                volume += 2
+                                bdy = bdy % (volume)
+                            if my_servive.get('sonosVolumeDown'):
+                                volume -= 2
+                                bdy = bdy % (volume)
                             requests.request(req,
                                              'http://' + loc + ':' + prt + pth,
-                                             data=bdy)
+                                             headers=hdr, data=bdy, timeout=0.5)
                         except KeyError:
                             pass  # ignore if not exists
