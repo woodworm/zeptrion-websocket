@@ -39,7 +39,7 @@ class WSAgent():
                 self.zeptrion_devices[ip].bta = message_data['eid2'].get('bta')
 
     def tick_event(self, ip, num):
-        if 'P' in self.zeptrion_devices[ip].bta:
+        if 'P' == self.zeptrion_devices[ip].bta[num]:
             self.zeptrion_devices[ip].service.trigger(num, "tick")
             self.zeptrion_devices[ip].timer = threading.Timer(0.25, self.tick_event, args=(ip, num,))
             self.zeptrion_devices[ip].timer.start()
