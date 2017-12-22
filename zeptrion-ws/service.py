@@ -2,6 +2,7 @@
 
 import json
 import requests
+import random
 
 
 class Service():
@@ -37,12 +38,20 @@ class Service():
                                 bdy = my_servive.get('bdy')
                                 hdr = my_servive.get('hdr')
 
-                                if my_servive.get('sonosVolumeUp'):
+                                fun_fu = my_servive.get('fun_fu')
+                                if fun_fu == 'sonos_volume_up':
                                     self.volume += 2
                                     bdy = bdy % (self.volume)
-                                if my_servive.get('sonosVolumeDown'):
+                                if fun_fu == 'sonos_volume_down':
                                     self.volume -= 2
                                     bdy = bdy % (self.volume)
+                                if fun_fu == 'random_led_test':
+                                    r = random.randrange(0x10, 0x55)
+                                    g = random.randrange(0x10, 0x55)
+                                    b = random.randrange(0x10, 0x55)
+                                    rgb = '%02X%02X%02X' % (r, g, b)
+                                    bdy = bdy % (bt_num + 1, rgb)
+
                                 requests.request(req,
                                                  'http://' + loc + ':' + prt + pth,
                                                  headers=hdr, data=bdy, timeout=0.5)

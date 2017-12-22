@@ -25,6 +25,80 @@
         {},
         {}
     ],
+    "zapp-17800003": [
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+        {
+            "pressed" : {
+                "req": "POST",
+                "loc": "192.168.7.236",
+                "prt": 80,
+                "pth": "/zapi/smartfront/led",
+                "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+                "fun_fu": "random_led_test"
+            }
+        },
+      {
+          "pressed" : {
+              "req": "POST",
+              "loc": "192.168.7.236",
+              "prt": 80,
+              "pth": "/zapi/smartfront/led",
+              "bdy": "{\"id\":%d,\"bg\":\"#%06s\"}",
+              "fun_fu": "random_led_test"
+          }
+      },
+      {},
+      {}
+  ],
     "zapp-17800002": [
       {},
       {},
@@ -35,12 +109,12 @@
       {
           "tick" : {
               "req": "POST",
-              "loc": "192.168.7.126",
+              "loc": "192.168.7.236",
               "prt": 1400,
               "hdr":{"Content-Type": "text/xml", "SOAPACTION": "urn:schemas-upnp-org:service:RenderingControl:1#SetVolume"},
               "pth": "/MediaRenderer/RenderingControl/Control",
               "bdy": "<?xml version=\"1.0\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetVolume xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>%d</DesiredVolume></u:SetVolume></s:Body></s:Envelope>",
-              "sonosVolumeUp":true
+              "fun_fu": "sonos_volume_down"
           }
       },
       {
@@ -51,7 +125,7 @@
               "hdr":{"Content-Type": "text/xml", "SOAPACTION": "urn:schemas-upnp-org:service:RenderingControl:1#SetVolume"},
               "pth": "/MediaRenderer/RenderingControl/Control",
               "bdy": "<?xml version=\"1.0\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetVolume xmlns:u=\"urn:schemas-upnp-org:service:RenderingControl:1\"><InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>%d</DesiredVolume></u:SetVolume></s:Body></s:Envelope>",
-              "sonosVolumeDown":true
+              "fun_fu": "sonos_volume_up"
           }
       },
       {}
