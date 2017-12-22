@@ -25,7 +25,7 @@
         {},
         {}
     ],
-    "zapp-17800003": [
+    "zapp-17800002": [
         {
             "pressed" : {
                 "req": "POST",
@@ -99,7 +99,7 @@
       {},
       {}
   ],
-    "zapp-17800002": [
+    "zapp-17800003": [
       {},
       {},
       {},
@@ -109,7 +109,7 @@
       {
           "tick" : {
               "req": "POST",
-              "loc": "192.168.7.236",
+              "loc": "192.168.7.126",
               "prt": 1400,
               "hdr":{"Content-Type": "text/xml", "SOAPACTION": "urn:schemas-upnp-org:service:RenderingControl:1#SetVolume"},
               "pth": "/MediaRenderer/RenderingControl/Control",
